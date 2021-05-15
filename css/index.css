@@ -1,4 +1,31 @@
 /* body全体-------------------------------------------------------*/
+body {
+  font: 14px/1.9 "Noto Sans JP", Arial, Vedana, 游ゴシック, YuGothic,
+    "ヒラギノ角ゴ ProN W3", "hiragino kaku Gothic ProN", メイリオ, Meiryo,
+    sans-serif;
+  font-weight: 300;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  color: black;
+  background-color: white;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover,
+.active {
+  text-decoration: underline black;
+}
+
+a:hover,
+a:focus,
+input:active,
+input:focus {
+  outline: 0;
+}
 
 /* ヘッダー部分 ----------------------------------------------------*/
 #header {
@@ -6,7 +33,7 @@
 }
 
 #header h1 {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 #header h1 img {
@@ -14,6 +41,7 @@
   height: 80px;
 }
 
+/* ハンバーガメニューOpenアイコン のspan*/
 #hamburgerOpenBtn {
   display: none;
   position: absolute;
@@ -25,6 +53,7 @@
   transition: 1s;
 }
 
+/* ハンバーガメニューCloseアイコン の三本線マーク */
 .navMark {
   display: block;
   position: absolute;
@@ -54,6 +83,12 @@
 
 .menuPanel ul {
   list-style: none;
+  padding-bottom: 20px;
+}
+
+.menuPanel ul li {
+  display: inline-block;
+  margin-left: 50px;
 }
 
 /* topImg部分 ----------------------------------------------------*/
@@ -71,6 +106,41 @@
   width: 1280px;
   height: 528px;
   margin-left: -640px;
+}
+
+/* 共通コード設定 (messagePart部分) ----------------------------------------------------*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 各sectionのタイトル(h2)　を指定 */
+
+section {
+  clear: both; /*floatプロパ要素　の回り込みを解除する　左,右、中央の要素*/
+  padding-top: 70px;
+}
+
+section h2 {
+  font-family: "Pacifico", cursive;
+  width: 60%;
+  margin: 0 auto 40px;
+  font-size: 22px;
+  font-weight: normal;
+  text-align: center;
+  background: url("../images/borderBlack.png") repeat-x 0 50%;
+  background-size: 1px 1px;
+}
+
+section h2 span {
+  background: #fff;
+  padding: 0 80px;
+}
+
+.guide {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 80px;
 }
 
 /* messagePart部分 ----------------------------------------------------*/
