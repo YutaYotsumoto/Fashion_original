@@ -1,4 +1,8 @@
 /* body全体-------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: 14px/1.9 "Noto Sans JP", Arial, Vedana, 游ゴシック, YuGothic,
     "ヒラギノ角ゴ ProN W3", "hiragino kaku Gothic ProN", メイリオ, Meiryo,
@@ -143,9 +147,29 @@ section h2 span {
   padding-bottom: 80px;
 }
 
-/* messagePart部分 ----------------------------------------------------*/
+/*⭐️ galleryPart部分 ----------------------------------------------------*/
 
-/* galleryPart部分 ----------------------------------------------------*/
+#gallerySection {
+  padding: 0 !important;
+}
+
+#gallerySection header {
+  display: none;
+}
+
+.flex_gallery-box {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.flex_gallery-item {
+  flex-grow: 1;
+  width: 426px;
+  height: 100%;
+  /* line-height: 0; */
+  alt: "";
+}
 
 /* projectPart部分 ----------------------------------------------------*/
 
