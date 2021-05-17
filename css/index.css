@@ -193,7 +193,7 @@ section h2 span {
   margin-left: 50px;
 }
 
-.under_in .img {
+.under_in .imgBox {
   padding: 80px 50px;
   margin-bottom: 40px;
   line-height: 0 !important;
@@ -203,6 +203,18 @@ section h2 span {
 .under_in img {
   width: 170;
   height: 106px;
+}
+
+#backgroundPicture {
+  background: url("../images/bgSec04.jpg") no-repeat 100% 100% fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  text-align: center;
+  padding: 220px 20px;
+}
+
+#backgroundPicture img {
+  width: auto;
 }
 
 /* companyPart部分 ----------------------------------------------------*/
