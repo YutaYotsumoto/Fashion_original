@@ -218,6 +218,48 @@ section h2 span {
 }
 
 /* companyPart部分 ----------------------------------------------------*/
+#companySection p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.flex-info_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-info_item {
+  list-style: none;
+  display: inline-block;
+  width: 80%;
+  margin: 20px 0;
+  padding: 0;
+}
+
+#sns img {
+  padding: 35px 10px 5px 0;
+}
+
+#sns a:hover img {
+  opacity: 0.8;
+}
+
+#map {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
 
 /* footer部分 ----------------------------------------------------*/
 
