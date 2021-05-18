@@ -12,6 +12,7 @@ body {
   overflow-x: hidden;
   color: black;
   background-color: white;
+  margin: 0;
 }
 
 a {
@@ -87,6 +88,7 @@ input:focus {
 
 .menuPanel ul {
   list-style: none;
+  text-align: center;
   padding-bottom: 20px;
 }
 
@@ -165,7 +167,7 @@ section h2 span {
 }
 .flex_gallery-item {
   flex-grow: 1;
-  width: 426px;
+  width: 30%;
   height: 100%;
   /* line-height: 0; */
   alt: "";
@@ -184,16 +186,18 @@ section h2 span {
 .under {
   display: flex;
   justify-content: center;
-  margin: 0 auto 10%;
+  margin: 0 10%;
+  padding-bottom: 80px;
 }
 
 .under_in {
   text-align: center;
-  margin-right: 50px;
-  margin-left: 50px;
+  min-width: 210px;
+  width: 33.3%;
+  margin: 0 5%;
 }
 
-.under_in .imgBox {
+p.imgBox {
   padding: 80px 50px;
   margin-bottom: 40px;
   line-height: 0 !important;
@@ -201,8 +205,9 @@ section h2 span {
 }
 
 .under_in img {
-  width: 170;
-  height: 106px;
+  width: 100%;
+  /* min-width: 110px; */
+  height: auto;
 }
 
 #backgroundPicture {
@@ -225,7 +230,7 @@ section h2 span {
 
 .flex-info_box {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .flex-info_item {
@@ -234,6 +239,10 @@ section h2 span {
   width: 80%;
   margin: 20px 0;
   padding: 0;
+}
+
+#text-info {
+  padding-right: 20px;
 }
 
 #sns img {
@@ -252,7 +261,7 @@ section h2 span {
   z-index: 0;
 }
 
-#map iframe {
+iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -266,11 +275,99 @@ section h2 span {
 /* メディアクエリ部分 画面サイズ毎の設定----------------------------------------------------*/
 
 /*画面サイズ1200px以上---------------------------------------------------*/
-
+@media only screen and (min-width: 1200px) {
+  .under {
+    width: 1200px;
+  }
+}
 /*画面サイズ800px以上----------------------------------------------------*/
+@media only screen and (min-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+
+  .menuPanel {
+    display: block !important;
+  }
+
+  menuNav li {
+    display: inline-block;
+    padding: 50px 25px;
+    font-size: 15px;
+  }
+}
 
 /*画面サイズ641px以上----------------------------------------------------*/
+@media only screen and (min-width: 641px) {
+}
 
 /*画面サイズ640以下----------------------------------------------------*/
+@media only screen and (max-width: 640px) {
+}
 
 /*画面サイズ799px以下----------------------------------------------------*/
+
+@media only screen and (max-width: 799px) {
+  #header {
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+  }
+
+  #headerPart {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+
+  #header h1 {
+    padding-top: 10px;
+    margin: 0;
+    padding: 0;
+  }
+
+  #header h1 img {
+    margin-top: 15px;
+    max-height: 45px;
+    width: auto !important;
+  }
+
+  .menuPanel {
+    display: none;
+  }
+
+  #hamburgerOpenBtn {
+    display: block;
+  }
+
+  .under {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .under_in {
+    margin: 0;
+    flex-grow: 1;
+    /* margin: 50px auto; */
+  }
+
+  #topImg {
+    padding-top: 60px;
+    z-index: -100;
+  }
+
+  section {
+    padding-top: 50px;
+  }
+
+  section h2 {
+    margin-top: 0 auto 20px;
+  }
+
+  section h2 span {
+    padding: 0 30px;
+  }
+}
