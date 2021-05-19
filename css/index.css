@@ -245,6 +245,7 @@ p.imgBox {
 
 #backgroundPicture {
   background: url("../images/bgSec04.jpg") no-repeat 100% 100% fixed;
+  width: 100%;
   background-size: cover;
   -webkit-background-size: cover;
   text-align: center;
@@ -276,6 +277,11 @@ p.imgBox {
 
 #text-info {
   padding-right: 20px;
+  flex-grow: 1;
+}
+
+#map-info {
+  flex-grow: 3;
 }
 
 #sns img {
@@ -336,6 +342,47 @@ iframe {
 
 /*画面サイズ640以下----------------------------------------------------*/
 @media only screen and (max-width: 640px) {
+  /* gallerySectionの子要素を縦配置 */
+  .flex_gallery-box {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .flex_gallery-item {
+    width: 100%;
+  }
+  /* backgroundPictureのheightを調整 */
+
+  #backgroundPicture {
+    position: relative;
+    height: 114px;
+    padding: 50px 20px;
+    z-index: -50;
+  }
+
+  #backgroundPicture img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* companySectionの　子要素liを縦配置 */
+
+  .flex-info_box {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .flex-info_item {
+    width: 100%;
+  }
+  /* guideクラスの　左右marginを調整 */
+  .guide {
+    width: 94%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 /*画面サイズ799px以下----------------------------------------------------*/
@@ -394,13 +441,21 @@ iframe {
   }
 
   .menuPanel ul li {
+    position: relative;
     margin-left: 0;
     border-bottom: 1px solid #ccc;
     width: 100%;
     flex-grow: 1;
     /* height: 5vh; */
   }
+  .menuPanel ul li a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
+  /* brandSection */
   .under {
     display: flex;
     flex-flow: column;
@@ -408,9 +463,19 @@ iframe {
   }
 
   .under_in {
+    width: 100%;
     margin: 0;
     flex-grow: 1;
     /* margin: 50px auto; */
+  }
+
+  .imgBox {
+    margin-top: 0;
+  }
+
+  .imgBox img {
+    width: 170px;
+    height: 106px;
   }
 
   #topImg {
