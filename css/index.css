@@ -15,6 +15,10 @@ body {
   margin: 0;
 }
 
+ul {
+  padding-left: 0;
+}
+
 a {
   color: black;
   text-decoration: none;
@@ -38,7 +42,8 @@ input:focus {
 }
 
 #header h1 {
-  padding-top: 40px;
+  padding-top: 60px;
+  margin: 0;
 }
 
 #header h1 img {
@@ -66,7 +71,7 @@ input:focus {
   width: 20px;
   height: 2px;
   background-color: black;
-  transition: 1s;
+  transition: 0.5s;
   border-radius: 5px;
 }
 
@@ -82,6 +87,33 @@ input:focus {
   top: 27px;
 }
 
+/* ハンバーガーメニューのアニメーションを作成 */
+
+.fadein {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.linea,
+.lineb,
+.linec {
+  background: #000000;
+}
+
+.linea {
+  /* -webkit-transform: rotate(-45deg); */
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.lineb {
+  opacity: 0;
+}
+
+.linec {
+  /* -webkit-transform: rotate(-135deg); */
+  transform: translateY(-6px) rotate(-135deg);
+}
+
 #menuNav a {
   color: black;
 }
@@ -89,7 +121,8 @@ input:focus {
 .menuPanel ul {
   list-style: none;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 40px 0;
+  margin: 0;
 }
 
 .menuPanel ul li {
@@ -311,7 +344,6 @@ iframe {
   #header {
     position: fixed;
     width: 100%;
-    z-index: 500;
   }
 
   #headerPart {
@@ -320,6 +352,7 @@ iframe {
     height: 70px;
     background: #fff;
     border-bottom: 1px solid #ccc;
+    z-index: 2;
   }
 
   #header h1 {
@@ -334,12 +367,38 @@ iframe {
     width: auto !important;
   }
 
-  .menuPanel {
-    display: none;
-  }
-
   #hamburgerOpenBtn {
     display: block;
+    z-index: 3;
+  }
+
+  /* ハンバーガーメニューリスト */
+
+  #menuNav {
+    position: relative;
+    width: 100%;
+    top: -247px;
+    display: block;
+    background-color: #fff;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    z-index: 1;
+  }
+
+  .menuPanel ul {
+    padding: 0;
+    margin: 0;
+    height: 30vh;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .menuPanel ul li {
+    margin-left: 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    flex-grow: 1;
+    /* height: 5vh; */
   }
 
   .under {
