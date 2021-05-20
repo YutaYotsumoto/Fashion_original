@@ -12,13 +12,15 @@ body {
   overflow-x: hidden;
   color: black;
   background-color: white;
-  margin: 0;
+  margin: 0; /*　bodyのデフォルトの　8pxを消す*/
 }
 
+/* ul要素のの中に入るliのデフォルトpadding-leftに8pxの消去 */
 ul {
   padding-left: 0;
 }
 
+/* ボタン */
 a {
   color: black;
   text-decoration: none;
@@ -60,7 +62,7 @@ input:focus {
   width: 30px;
   height: 44px;
   cursor: pointer;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 /* ハンバーガメニューCloseアイコン の三本線マーク */
@@ -127,7 +129,7 @@ input:focus {
 
 .menuPanel ul li {
   display: inline-block;
-  margin-left: 50px;
+  margin: 0 25px;
 }
 
 /* topImg部分 ----------------------------------------------------*/
@@ -149,6 +151,7 @@ input:focus {
 
 /* 共通コード設定 (messagePart部分) ----------------------------------------------------*/
 img {
+  /* 画像サイズの最適化 */
   max-width: 100%;
   height: auto;
 }
@@ -156,14 +159,14 @@ img {
 /* 各sectionのタイトル(h2)　を指定 */
 
 section {
-  clear: both; /*floatプロパ要素　の回り込みを解除する　左,右、中央の要素*/
+  /* clear: both; floatプロパ要素　の回り込みを解除する　左,右、中央の要素 */
   padding-top: 70px;
 }
 
 section h2 {
   font-family: "Pacifico", cursive;
-  width: 60%;
-  margin: 0 auto 40px;
+  width: 60%; /*　親要素headear に対して　60%*/
+  margin: 0 auto 40px; /*　上 | 左右 | 下　*/
   font-size: 22px;
   font-weight: normal;
   text-align: center;
@@ -177,8 +180,8 @@ section h2 span {
 }
 
 .guide {
-  width: 60%;
-  margin: 0 auto;
+  width: 60%; /*　親要素に対して　60% */
+  margin: 0 auto; /* 上下　｜　左右 */
   padding-bottom: 80px;
 }
 
@@ -195,12 +198,12 @@ section h2 span {
 .flex_gallery-box {
   background-color: rgb(255, 255, 255);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap; /*　折り返しを指定　*/
+  justify-content: center; /* 主軸方向(基本X)　の子要素配置1 */
 }
 .flex_gallery-item {
-  flex-grow: 1;
-  width: 30%;
+  flex-grow: 1; /*余白を子要素に分配 1割*/
+  width: 30%; /*100%の横幅に　入る幅30%の子要素は3つ =90%の幅子要素が並ぶ　残り10%が flex-growで分配される*/
   height: 100%;
   /* line-height: 0; */
   alt: "";
@@ -218,35 +221,36 @@ section h2 span {
 
 .under {
   display: flex;
-  justify-content: center;
-  margin: 0 10%;
+  justify-content: center; /* 子要素を中央揃え */
+  margin: 0 10%; /*上下 | 左右　10%=画面サイズに対して10%の左右marginを保つ*/
   padding-bottom: 80px;
 }
 
 .under_in {
-  text-align: center;
-  min-width: 210px;
-  width: 33.3%;
+  text-align: center; /*　子要素の brandimg　と　pタグ解説が　縦に中央揃え*/
+  min-width: 210px; /* 最低幅210px */
+  width: 33.3%; /*　33.3%　→3つの要素を3等分幅　*/
   margin: 0 5%;
 }
 
 p.imgBox {
-  padding: 80px 50px;
+  padding: 80px 50px; /*上下左右の渡伯を決めることで　子要素imgの大きさを調節*/
   margin-bottom: 40px;
   line-height: 0 !important;
   background: #f6f6f6;
 }
 
 .under_in img {
+  /*　img要素　の大きさを一定に保つ　*/
   width: 100%;
   /* min-width: 110px; */
-  height: auto;
+  height: auto; /*widthに合った幅を自動指定*/
 }
 
 #backgroundPicture {
-  background: url("../images/bgSec04.jpg") no-repeat 100% 100% fixed;
+  background: url("../images/bgSec04.jpg") no-repeat 100% 100% fixed; /* fixedによって画像が固定*/
   width: 100%;
-  background-size: cover;
+  background-size: cover; /* 背景画像サイズを　縦横ひ崩さずに　拡大縮小*/
   -webkit-background-size: cover;
   text-align: center;
   padding: 220px 20px;
@@ -269,7 +273,7 @@ p.imgBox {
 
 .flex-info_item {
   list-style: none;
-  display: inline-block;
+  display: inline-block; /*　子要素pタグ(インライン)に対して　width margin　などを設定するため　*/
   width: 80%;
   margin: 20px 0;
   padding: 0;
@@ -277,11 +281,11 @@ p.imgBox {
 
 #text-info {
   padding-right: 20px;
-  flex-grow: 1;
+  flex-grow: 1; /*　親要素の余白を1割分配*/
 }
 
 #map-info {
-  flex-grow: 3;
+  flex-grow: 3; /*親要素の余白を3割分配*/
 }
 
 #sns img {
@@ -361,6 +365,7 @@ iframe {
   }
 
   #backgroundPicture img {
+    /*　親要素を基準relativeとして　子要素imgを左右中央揃え*/
     position: absolute;
     top: 50%;
     left: 50%;
@@ -389,7 +394,7 @@ iframe {
 
 @media only screen and (max-width: 799px) {
   #header {
-    position: fixed;
+    position: fixed; /* headerを常に画面上部に表示*/
     width: 100%;
   }
 
@@ -427,7 +432,6 @@ iframe {
     top: -247px;
     display: block;
     background-color: #fff;
-    -webkit-transition: 0.5s;
     transition: 0.5s;
     z-index: 1;
   }
